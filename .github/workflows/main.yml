@@ -19,7 +19,7 @@ jobs:
       run: sudo apt-get install nodejs && npm install --global yarn
       
     - name: déplacement vers le front et execution des tests
-      run: cd ./FGC/ && yarn && yarn lint
+      run: cd ./FGC/ && yarn && nvm use 16.13.0 && yarn lint
       
   package:
   
