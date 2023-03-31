@@ -8,8 +8,21 @@ on:
 
 jobs:
 
-  package:
+  test:
+    runs-on: node-alpine
 
+    steps:
+    - name: Récupération des fichiers du git
+      uses: actions/checkout@v3
+      
+    - name: déplacement vers le front
+      run: cd ./FGC/
+      
+    - name: execution des tests
+      run: yarn lint
+
+  package:
+  
     runs-on: ubuntu-latest
 
     steps:
