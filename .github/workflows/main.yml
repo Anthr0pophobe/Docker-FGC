@@ -18,12 +18,9 @@ jobs:
     - name: Installation de node et yarn
       run: sudo apt-get install nodejs && npm install --global yarn
       
-    - name: déplacement vers le front
-      run: cd ./FGC/
+    - name: déplacement vers le front et execution des tests
+      run: cd ./FGC/ && yarn lint
       
-    - name: execution des tests
-      run: yarn lint
-
   package:
   
     runs-on: ubuntu-latest
