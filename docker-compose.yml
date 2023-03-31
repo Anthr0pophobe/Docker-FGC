@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  fgcdb:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - C:\Users\ayoub\Documents\Dev\Khais\FGCdb:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fgc
+    networks:
+      - backend
+  
+  fgcapi:
+    depends_on:
+      - fgcdb
+    build: ./FGCApi
+    restart: unless-stopped
+    ports:
+      - 3008:3008
+    networks:
+      - backend
+      - frontend
+
+  fgc:
+    depends_on:
+      - fgcapi
+    build:
+      context: ./fgc
+    ports:
+      - 3000:3000
+    networks:
+      - frontend
+
+networks:
+  backend:
+  frontend:

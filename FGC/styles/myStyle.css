@@ -1,0 +1,28 @@
+.bg-blue {
+    background-color: #5D63D1;
+}
+.bg-light-blue {
+    background-color: #0377FF;
+}
+.bg-orange {
+    background-color: #F72C05;
+}
+.bg-yellow-orange {
+    background-color: #F79E05
+}
+
+
+.text-blue {
+    color: #5D63D1;
+}
+.text-light-blue {
+    color: #0377FF;
+}
+.text-orange {
+    color: #F72C05;
+}
+
+.errorForm {
+    color: #F72C05;
+    font-size: small;
+}
